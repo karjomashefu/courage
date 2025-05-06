@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="register" method="post">
+      {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputFirstNAme" class="form-label">First Name</label>
+            <input type="text" name="first_name" placeholder="Enter FirstName">
+          
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputFirstNAme" class="form-label">Last Name</label>
+            <input type="text" name="last_name" placeholder="Enter LastName">
+          
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputFirstNAme" class="form-label">Username</label>
+            <input type="text" name="username" placeholder="Enter Username">
+          
+          </div>
+  
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" name="email" placeholder="Enter Email">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" name="password1" placeholder="Enter Password">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" name="password2" placeholder="Confirm Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+<div> 
+  {% for message in messages %}
+  <p>{{message}}</p>
+  {% endfor %}
+</div>
+      
+</body>
+</html>

@@ -1,0 +1,12 @@
+my plumbing site must have a page were peaple see our daily activity which is goona uoloaded by the admin
+then if the customer need to upload their testmonies you can even create a testmonies pages which can be have a link from the home pages 
+rakanzi view testmonies or made a testmonies link and if u go the u will have a link rakanzi book a service then after that
+
+so munhu kana akaisa testmony yake we must also have an admin page were we can seee maenquiries aitwa nevanhu or nogona kt tiite pop to my emaail
+kana ndawana an enquiry a can send a quation on his email or kana kufona the comunication initiated from there.
+
+@* if the user make an enquiry the will be a notification to the admin panel which pops to shows that
+ the someone who have make an enquiry*
+
+
+ left at @3.00S

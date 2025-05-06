@@ -1,0 +1,121 @@
+STATIC FILES IN DJANGO 
+->CREATE a folder wer you put all you static files eg images,js,pluggins and sytles
+for you django to know were to look for those files we have to specify the path of the files in setting.py
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.1/howto/static-files/
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR,'assets')
+->pass the command to create the folder to collect all the files from the static folder=>python manage.py colectstatic
+
+ so for our variable we create aclass under models then put variables under that class eg
+from django.db import models
+
+>>>Create your models here.
+class Destination:  # simple model to declare variable 
+    id : int 
+    title : st
+
+>>>the goes to the views.py import model then create an object
+
+def index(request):
+ now object as many as you want eg
+dest1 = Destination()-> is the name of a classs that is were you ar now able to put data ibn varibale u create in models 
+dest1.name = "courage"
+
+dest2 = Destination()
+dest2.name= "trevor"
+
+then after done creating u object
+   #if you have more than 2 objects you create a list of the eg
+  >dests = [dest1,dest2,dest3] # this i an array of object
+  > return render(request,'index.html',{'dests':dests})
+
+>>>the index.html home page 
+use a for loop inorder for ur object to viewed that is to make it dynamic 
+take not @# we dont pass jinja inside jinja wen dealing with pictures
+>>>> check talisko video ar 1:36:51 to 1:45 
+     {% load static "images" as baseUrl%}
+
+inside will erite {{basUrl}}/{{dest.img}} #way to avoid jinja inside jinja
+
+>>if statement in django on video 1.42
+{%if dest.offer %}<p class="text-primary fw-medium">
+<i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
+   {% endif %}
+
+
+PASS DATA FROM THE DATABASE
+
+Models and Migration
+go to the settings  at the DATABASE
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'karjo',
+        'USER': 'postgres',
+        'PASSWORD': '1826',
+        'HOST' : 'localhost',
+    }
+>> Then after that u have to install dtatabase adapter using command 
+>> pip install psycopg2 find wat is psycopg2 it will dwnload
+not yet run the command python manage.py makemigrations because am not yet install psycopg2
+
+
+
+
+
+USER REGISTRAION  @2hr 26min
+CREATE USER REGISTRATION
+b4 u register or login u cant see testimonies and some page that i am gonna remove
+create another app for accounts by usin camond python manage.py startapp 
+dont frgt on every app we need urls.py 
+
+
+User registration 2 
+for sending data to the database@2.39
+from django.shortcuts import render,redirect
+from django.http import HttpResponse
+from django.contrib.auth.models import User,auth
+
+# Create your views here.
+
+
+
+def register(request):
+    if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+
+        if password1==password2:
+            user = User.objects.create_user(username=username,password=password1,first_name=first_name,last_name=last_name,email=email)
+            user.save();
+            print('user succssfully created')
+        else:
+            print('pasword is not matching')
+        return redirect('/')  
+
+HOW TO PRINT ERRORS IN THE PAGES 
+eg @user name already taken on the page  we use an existing feature in jango called messeges
+
+class MyModel(models.Model):
+    STATUS_PENDING = 'P'
+    STATUS_COMPLETED = 'C'
+    STATUS_FAILED = 'F'
+
+    STATUS_CHOICES = [
+        (STATUS_PENDING, 'Pending'),
+        (STATUS_COMPLETED, 'Completed'),
+        (STATUS_FAILED, 'Failed'),
+    ]
+
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default=STATUS_PENDING)         

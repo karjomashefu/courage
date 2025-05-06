@@ -1,0 +1,694 @@
+{%load static %}
+<!--do forget the issue yepicture to avoid passing jinja insewde jinja-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Plumberz - Free Plumbing Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+      #testimony-form {
+        display: none;
+        margin-top: 20px;
+      }
+      #success-message {
+        display: none;
+      }
+    </style>
+    <!-- Slide SHOW Header -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+    
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+   <!-- This style is for social media -->
+   <style>
+    /* WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    z-index: 999;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    animation: bounce 2s infinite;
+    transition: background 0.3s ease;
+  }
+  .whatsapp-float:hover {
+    background-color: #1ebe57;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  
+  /* Make WhatsApp button slightly smaller on mobile */
+  @media (max-width: 576px) {
+    .whatsapp-float {
+      padding: 12px;
+      font-size: 20px;
+      bottom: 15px;
+      right: 15px;
+    }
+  }
+   </style>
+
+   <script>
+    function confirmWhatsApp() {
+      const confirmChat = confirm("Do you want to open WhatsApp and start a chat?");
+      if (confirmChat) {
+        window.open("https://wa.me/+27810745964", "_blank");
+      }
+    }
+  </script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+      }
+      .owl-carousel .owl-carousel-item img {
+        max-height: 100vh;
+        object-fit: cover;
+        width: 100%;
+      }
+      .btn {
+        font-weight: bold;
+      }
+    </style>
+
+    <script>
+        function confirmWhatsApp() {
+          const confirmChat = confirm("Do you want to open WhatsApp and start a chat?");
+          if (confirmChat) {
+            window.open("https://wa.me/+27810745964", "_blank");
+          }
+        }
+      </script>
+
+    <!--End Slideshow Header-->
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap' %}" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css' %}" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet' %}">
+
+        <style>
+            /* Hover effect for nav links - enlarge and dark blue */
+            .navbar-nav .nav-link {
+                transition: all 0.3s ease;
+            }
+        
+            .navbar-nav .nav-link:hover {
+                color: #00274d !important; /* Dark blue */
+                font-size: 1.1rem;
+                transform: scale(1.05);
+            }
+        
+            /* Dropdown on hover */
+            .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
+        
+            /* Dropdown items hover styling */
+            .dropdown-menu .dropdown-item {
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+        
+            .dropdown-menu .dropdown-item:hover {
+                background-color: #f1f1f1;
+                color: #00274d;
+                font-weight: 500;
+            }
+        
+            /* Smooth dropdown transition */
+            .dropdown-menu {
+                transition: all 0.3s ease;
+                border-radius: 6px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+        
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light d-none d-lg-block">
+        <div class="row align-items-center top-bar">
+            <div class="col-lg-3 col-md-12 text-center text-lg-start">
+                <a href="" class="navbar-brand m-0 p-0">
+                    <h1 class="text-primary m-0"> Courage Group 🌳🔧</h1>
+                </a>
+            </div>
+            <div class="col-lg-9 col-md-12 text-end">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <i class="fa fa-map-marker-alt text-primary me-2"></i>
+                    <p class="m-0">2703 ex 1 kanana hammanskraal  </p>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <i class="far fa-envelope-open text-primary me-2"></i>
+                    <a style="color: #007bff; font-weight: bold;" href="mailto:plumbercourage88@gmail.com ?subject=Inquiry&body=Hello%20there,%20I%20have%20a%20question%20about%20your%20services.">plumbercourage88@gmail.com </a>
+
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <div class="d-flex social-bar">
+                        <a class="btn btn-sm-square bg-white text-primary me-2" href="https://www.facebook.com/yourpage" target="_blank">
+                          <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="btn btn-sm-square bg-white text-danger me-2" href="https://www.instagram.com/yourprofile" target="_blank">
+                          <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+                            <i class="fab fa-whatsapp whatsapp-icon"></i>
+                          </a>
+                        <a class="btn btn-sm-square bg-white text-info" href="https://www.linkedin.com/in/yourprofile" target="_blank">
+                          <i class="fab fa-linkedin-in"></i>
+                        </a>
+                      </div>
+                     </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-bar bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4">
+            <a href="" class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none">
+                <h1 class="text-primary m-0">Plumberz</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav me-auto">
+                    <a href="" class="nav-item nav-link active">Home</a>
+                    <a href="/about" class="nav-item nav-link">About</a>
+                    <a href="services/service" class="nav-item nav-link">Services</a>
+                   
+                    {% if user.is_authenticated %}
+                    <li>Hello, {{user.first_name}}</li>
+                    <a href="accounts/logout" class="nav-item nav-link">Logout</a>
+                   {% else %}
+                   <a href="accounts/register" class="nav-item nav-link">Register</a>
+                    <a href="accounts/login" class="nav-item nav-link">Login</a>
+                    {% endif %}
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu fade-up m-0">
+                            <a href="bookings" class="dropdown-item">Booking</a>
+                            <a href="team" class="dropdown-item">Technicians</a>
+                            <a href="testmony" class="dropdown-item active">Testimonial</a>
+                            <a href="404" class="dropdown-item">404 Page</a>
+                        </div>
+                    </div>
+                    <a href="services/contact" class="nav-item nav-link">Contact</a>
+                </div>
+                <div class="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-primary d-flex align-items-center">
+                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
+                        <i class="fa fa-phone-alt text-primary"></i>
+                    </div>
+                    <div class="ms-3">
+                        <p class="mb-1 text-white">Emergency 24/7 </p>
+                        <!-- WhatsApp Chat Button -->
+<a
+href="https://wa.me/YOUR_NUMBER?text=Hello%20there,%20I%20would%20like%20to%20inquire%20about%20your%20services."
+target="_blank"
+class="btn btn-success"
+style="color: #fff;"
+>
++27810745964
+</a>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <!-- Slideshow Section -->
+    <div class="container-fluid p-0 mb-5">
+        <div class="owl-carousel header-carousel position-relative">
+          <!-- Slide 1 -->
+          <div class="owl-carousel-item position-relative">
+            <img class="img-fluid" src="{% static 'img/carousel-1.jpg' %}" alt="Slide 1">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .4);">
+              <div class="container">
+                <div class="row justify-content-start">
+                  <div class="col-10 col-lg-8">
+                    <h5 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown">Plumbing & Repairing Services</h5>
+                    <h1 class="display-3 text-white animate__animated animate__fadeInDown mb-4">Efficient Residential Plumbing Services</h1>
+                    <p class="fs-5 fw-medium text-white mb-4 pb-2">We offer fast and affordable plumbing solutions for your home or apartment.</p>
+                    <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animate__animated animate__fadeInLeft">Read More</a>
+                    <a href="#" class="btn btn-secondary py-md-3 px-md-5 animate__animated animate__fadeInRight">Free Quote</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Slide 2 -->
+          <div class="owl-carousel-item position-relative">
+            <img class="img-fluid" src="{% static 'img/carousel-2.jpg' %}" alt="Slide 2">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .4);">
+              <div class="container">
+                <div class="row justify-content-start">
+                  <div class="col-10 col-lg-8">
+                    <h5 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown">Tree Felling & Vegetation Management</h5>
+                    <h1 class="display-3 text-white animate__animated animate__fadeInDown mb-4">Safe, Efficient & Environmentally Conscious Tree Felling</h1>
+                    <p class="fs-5 fw-medium text-white mb-4 pb-2">We specialize in the controlled removal of hazardous and overgrown trees for commercial and residential clients. Our expert team ensures safety, compliance, and minimal environmental impact in every project.</p>
+                    <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animate__animated animate__fadeInLeft">Read More</a>
+                    <a href="#" class="btn btn-secondary py-md-3 px-md-5 animate__animated animate__fadeInRight">Free Quote</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- JS Libraries -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+      <!-- Owl Carousel Initialization -->
+      <script>
+        $(document).ready(function(){
+          $(".header-carousel").owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn',
+            smartSpeed: 1000,
+            dots: true
+          });
+        });
+      </script>
+    <!-- Carousel End -->
+
+
+    <!-- Service Start -->
+    <div class="container-fluid py-5 px-4 px-lg-0">
+        <div class="row g-0">
+            <div class="col-lg-3 d-none d-lg-flex">
+                <div class="d-flex align-items-center justify-content-center bg-primary w-100 h-100">
+                    <h1 class="display-3 text-white m-0" style="transform: rotate(-90deg);">15 Years Experience</h1>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-9">
+                <div class="ms-lg-5 ps-lg-5">
+                    <div class="text-center text-lg-start wow fadeInUp" data-wow-delay="0.1s">
+                        <h6 class="text-secondary text-uppercase">Our Services</h6>
+                        <h1 class="mb-5">Explore Our Services</h1>
+                    </div>
+                    <div class="owl-carousel service-carousel position-relative wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="bg-light p-4">
+                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
+                                <i class="fa fa-water fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Drain Repair</h4>
+                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
+                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
+                        </div>
+                        <div class="bg-light p-4">
+                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
+                                <i class="fa fa-toilet fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Geyser Installation</h4>
+                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
+                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
+                        </div>
+                        <div class="bg-light p-4">
+                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
+                                <img class="img-fluid" src="" alt="">
+                                <i class="fa fa-shower fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Bathroom Remodel</h4>
+                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
+                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
+                        </div>
+                        <div class="bg-light p-4">
+                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
+                                <i class="fa fa-tint fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Tree Felling</h4>
+                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
+                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>1
+    <!-- Service End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-secondary text-uppercase">About Us</h6>
+                    <h1 class="mb-4">We Are a Trusted Plumbing & Tree Felling Company Since 2016</h1>
+                    <p class="mb-4">TwinCraft Services has proudly served communities with reliable plumbing and professional 
+                    tree felling solutions since 2016. 
+                    From leaky pipes to overgrown trees, we offer dependable service backed by years of hands-on experience. 
+                    Your property’s safety, comfort, and appeal are our top priorities.
+
+                    </p>
+                    <p class="fw-medium text-primary"><i class="fa fa-check text-success me-3"></i>Residential & Commercial Plumbing • Expert Tree Felling</p>
+                    <p class="fw-medium text-primary"><i class="fa fa-check text-success me-3"></i>Quality services at affordable prices</p>
+                    <p class="fw-medium text-primary"><i class="fa fa-check text-success me-3"></i>Immediate 24/ 7 emergency services</p>
+                    <div class="bg-primary d-flex align-items-center p-4 mt-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;"><i class="fa fa-phone-alt fa-2x text-primary"></i>
+                        </div>
+                        <div class="ms-3">
+                            <p class="fs-5 fw-medium mb-2 text-white">Emergency 24/7</p>
+                            <h3 class="m-0 text-secondary">+27 81 074 5964</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pt-4" style="min-height: 500px;">
+                    <div class="position-relative h-100 wow fadeInUp" data-wow-delay="0.5s">
+                            <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/carousel-1.jpg' %}" style="object-fit: cover; padding: 0 0 50px 100px;" alt="">
+                        <img class="position-absolute start-0 bottom-0 img-fluid bg-white pt-2 pe-2 w-50 h-50" src="{% static 'img/about-2.jpeg' %} " style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Fact Start -->
+    <div class="container-fluid fact bg-dark my-5 py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                    <i class="fa fa-check fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Years Experience</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                    <i class="fa fa-users-cog fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Expert Technicians</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <i class="fa fa-users fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Satisfied Clients</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+                    <i class="fa fa-wrench fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Compleate Projects</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fact End -->
+
+
+    
+    <!-- Service End -->
+
+
+    <!-- Booking Start -->
+    <div class="container-fluid my-5 px-0">
+        <div class="video wow fadeInUp" data-wow-delay="0.1s">
+            <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                <span></span>
+            </button>
+
+            <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content rounded-0">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- 16:9 aspect ratio -->
+                            <div class="ratio ratio-16x9">
+                                <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
+                                    allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="text-white mb-4">Emergency Plumbing Service</h1>
+            <h3 class="text-white mb-0">24 Hours 7 Days a Week</h3>
+        </div>
+        <div class="container position-relative wow fadeInUp" data-wow-delay="0.1s" style="margin-top: -6rem;">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="bg-light text-center p-5">
+
+                        <h1 class="mb-4">Book For A Service</h1>
+                        <form action="send_data" method="POST">
+                            <div class="row g-3">
+                              
+                                <div class="col-12">
+                                    <a href="/services/bookings" class="btn btn-primary w-100 py-3" type="submit">Book Now</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Booking End -->
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-secondary text-uppercase">Our Technicians</h6>
+                <h1 class="mb-5">Our Expert Technicians</h1>
+            </div>
+            <div class="row g-4">
+                {% for dest in dests %}
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="{{dest.image.url}}" alt="">
+                        </div>
+                        <div class="team-text">
+                            <div class="bg-light">
+                                <h5 class="fw-bold mb-0">{{dest.full_name}}</h5>
+                                <small>{{dest.designation}}</small>
+                            </div>
+                            <div class="bg-primary">
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+               
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="text-secondary text-uppercase">Testimonial</h6>
+                <h1 class="mb-5">Our Clients Say! <a href="/services/testmony" class="btn btn-primary px-4 py-2">View Testimony</a></h1>
+            </div>
+
+            <div class="row g-3">
+                
+                <div class="container mt-5" style="max-width: 600px;">
+                    <h3 class="text-center mb-4">Submit Testimony</h3>
+                  
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                      <!-- Image Upload -->
+                      <div class="mb-3">
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input type="file" name="image" class="form-control" id="image" accept="image/*">
+                      </div>
+                  
+                      <!-- Client Name -->
+                      <div class="mb-3">
+                        <label for="name" class="form-label">Client Name</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter full name">
+                      </div>
+                  
+                      <!-- Profession -->
+                      <div class="mb-3">
+                        <label for="profession" class="form-label">Profession</label>
+                        <input type="text" name="profession" class="form-control" id="profession" placeholder="e.g. Teacher, Engineer">
+                      </div>
+                  
+                      <!-- Description -->
+                      <div class="mb-3">
+                        <label for="description" class="form-label">Testimony</label>
+                        <textarea class="form-control" name="description" id="description" rows="4" placeholder="Enter the testimony here..."></textarea>
+                      </div>
+                  
+                      <!-- Submit Button -->
+                      <button type="submit" class="btn btn-success w-100">Submit Testimony</button>
+                    </form>
+                  </div>
+                  
+                              
+        </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Address</h4>  
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>2703 ex 1 kanana hammanskraal</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+27810745964</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>plumbercourage88@gmail.com</p>
+                    <div class="d-flex social-bar">
+                        <a class="btn btn-sm-square bg-white text-primary me-2" href="https://www.facebook.com/yourpage" target="_blank">
+                          <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="btn btn-sm-square bg-white text-danger me-2" href="https://www.instagram.com/yourprofile" target="_blank">
+                          <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/+27810745964" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+                            <i class="fab fa-whatsapp whatsapp-icon"></i>
+                          </a>
+                        <a class="btn btn-sm-square bg-white text-info" href="https://www.linkedin.com/in/yourprofile" target="_blank">
+                          <i class="fab fa-linkedin-in"></i>
+                        </a>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Opening Hours</h4>
+                    <h6 class="text-light">Monday - Friday:</h6>
+                    <p class="mb-4">09.00 AM - 09.00 PM</p>
+                    <h6 class="text-light">Saturday - Sunday:</h6>
+                    <p class="mb-0">09.00 AM - 12.00 PM</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Services</h4>
+                    <a class="btn btn-link" href="">Drain Cleaning</a>
+                    <a class="btn btn-link" href="">Sewer Line</a>
+                    <a class="btn btn-link" href="">Water Heating</a>
+                    <a class="btn btn-link" href="">Toilet Cleaning</a>
+                    <a class="btn btn-link" href="">Broken Pipe</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                    </div>
+                    <div style="color: #007bff;" class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="{% static 'https://code.jquery.com/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
