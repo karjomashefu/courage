@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-from pathlib import Path
+from pathlib import Pathcd
 import dj_database_url
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-^gk*lbz%t8yrhq3joqrb24!y7q8x$q=@lct)u)*d_q6x9p#k(p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS =  ['courage-1hp1.onrender.com']]
+ALLOWED_HOSTS =  ['courage-1hp1.onrender.com']
 
 
 # Application definition
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'accounts',
     'plumbing.apps.PlumbingConfig',
     'django.contrib.admin',
+    
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
